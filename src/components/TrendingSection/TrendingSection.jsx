@@ -7,12 +7,13 @@ const TrendingSection = ({
   trendingMovies, 
   loading, 
   isFavorite, 
-  onToggleFavorite 
+  onToggleFavorite,
+  onMovieClick
 }) => {
   if (loading) {
     return (
       <section className="trending-section">
-        <h2 className="trending-title"> Trending Now</h2>
+        <h2 className="trending-title">🔥 Trending Now</h2>
         <p className="trending-loading">Loading trending anime...</p>
       </section>
     );
@@ -32,6 +33,7 @@ const TrendingSection = ({
             movie={movie}
             isFavorite={isFavorite(movie.mal_id)}
             onToggleFavorite={onToggleFavorite}
+            onClick={() => onMovieClick(movie)}
           />
         ))}
       </div>

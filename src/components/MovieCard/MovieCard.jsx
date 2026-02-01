@@ -3,13 +3,12 @@ import './MovieCard.css';
 import { sanitize } from '../../utils/sanitize';
 import FavoriteButton from '../FavoriteButton/FavoriteButton';
 
-const MovieCard = ({ movie, isFavorite, onToggleFavorite }) => {
 
+const MovieCard = ({ movie, isFavorite, onToggleFavorite, onClick }) => {
   if (!movie) {
     console.warn('MovieCard received undefined movie prop');
     return null;
   }
-
 
   const title = movie.title || 'Unknown Title';
   const poster = movie.images?.jpg?.large_image_url || 
@@ -18,12 +17,11 @@ const MovieCard = ({ movie, isFavorite, onToggleFavorite }) => {
   const rating = movie.score ? movie.score.toFixed(1) : 'N/A';
   const synopsis = movie.synopsis || 'No description available.';
   
-
   const safeTitle = sanitize(title);
   const safeSynopsis = sanitize(synopsis);
 
   return (
-    <article className="movie-card">
+    <article className="movie-card" onClick={onClick}>
       <div className="movie-poster-container">
         <img 
           src={poster} 
@@ -35,7 +33,6 @@ const MovieCard = ({ movie, isFavorite, onToggleFavorite }) => {
           }}
         />
         
-        {/* Favorite Button - Plus icon in corner */}
         <FavoriteButton
           isFavorite={isFavorite}
           onToggle={() => onToggleFavorite(movie)}

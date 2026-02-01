@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import TrendingSection from './components/TrendingSection/TrendingSection';
 import MovieGrid from './components/MovieGrid/MovieGrid';
 import FavoritesPage from './components/Favoritespage/FavoritesPage';
+import MovieDetailModal from './components/MovieDetailModal/MovieDetailModal';
 import Footer from './components/Footer/Footer';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import { useMovies } from './hooks/useMovies';
@@ -11,9 +12,7 @@ import { useFavorites } from './hooks/useFavorites';
 import { useGenreFilter } from './hooks/useGenreFilter';
 import { useTrending } from './hooks/useTrending';
 
-/**
- * App - Session 4 with Trending Section
- */
+
 function App() {
   const {
     movies,
@@ -49,6 +48,15 @@ function App() {
   } = useTrending();
 
   const [currentView, setCurrentView] = useState('home');
+  const [selectedMovie, setSelectedMovie] = useState(null);
+
+  const handleMovieClick = (movie) => {
+    setSelectedMovie(movie);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedMovie(null);
+  };
 
   return (
     <ErrorBoundary>
@@ -68,6 +76,7 @@ function App() {
                   loading={trendingLoading}
                   isFavorite={isFavorite}
                   onToggleFavorite={toggleFavorite}
+                  onMovieClick={handleMovieClick}
                 />
                 
                 <MovieGrid
@@ -86,6 +95,7 @@ function App() {
                   onLoadMore={loadMore}
                   loadingMore={loadingMore}
                   hasMore={hasMore}
+                  onMovieClick={handleMovieClick}
                 />
               </>
             ) : (
@@ -100,6 +110,15 @@ function App() {
         </main>
 
         <Footer />
+
+        {selectedMovie && (
+          <MovieDetailModal
+            movie={selectedMovie}
+            onClose={handleCloseModal}
+            isFavorite={isFavorite(selectedMovie.mal_id)}
+            onToggleFavorite={toggleFavorite}
+          />
+        )}
       </div>
     </ErrorBoundary>
   );

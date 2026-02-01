@@ -21,7 +21,8 @@ const MovieGrid = ({
   onClearFilters,
   onLoadMore,
   loadingMore,
-  hasMore
+  hasMore,
+  onMovieClick
 }) => {
   if (loading) {
     return (
@@ -79,6 +80,7 @@ const MovieGrid = ({
             movie={movie}
             isFavorite={isFavorite(movie.mal_id)}
             onToggleFavorite={onToggleFavorite}
+            onClick={() => onMovieClick(movie)}
           />
         ))}
       </div>

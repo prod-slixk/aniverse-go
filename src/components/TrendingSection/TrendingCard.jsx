@@ -4,7 +4,7 @@ import { sanitize } from '../../utils/sanitize';
 import FavoriteButton from '../FavoriteButton/FavoriteButton';
 
 
-const TrendingCard = ({ movie, isFavorite, onToggleFavorite }) => {
+const TrendingCard = ({ movie, isFavorite, onToggleFavorite, onClick }) => {
   if (!movie) return null;
 
   const title = movie.title || 'Unknown Title';
@@ -16,7 +16,7 @@ const TrendingCard = ({ movie, isFavorite, onToggleFavorite }) => {
   const safeTitle = sanitize(title);
 
   return (
-    <div className="trending-card">
+    <div className="trending-card" onClick={onClick}>
       <div className="trending-poster-container">
         <img 
           src={poster} 
