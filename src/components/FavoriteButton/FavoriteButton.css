@@ -1,0 +1,101 @@
+.favorite-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  background: rgba(26, 26, 46, 0.85);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.favorite-btn:hover {
+  background: rgba(26, 26, 46, 0.95);
+  border-color: var(--primary);
+  color: var(--text-primary);
+  transform: scale(1.1);
+}
+
+.favorite-btn:active {
+  transform: scale(0.95);
+}
+
+.favorite-btn.favorited {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.favorite-btn.favorited:hover {
+  background: var(--secondary);
+  border-color: var(--secondary);
+}
+
+/* Focus state for accessibility */
+.favorite-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.3);
+}
+
+/* Animation when clicking - ROTATE for plus/check */
+.favorite-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.favorite-btn:active svg {
+  animation: iconPop 0.3s ease;
+}
+
+@keyframes iconPop {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(90deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

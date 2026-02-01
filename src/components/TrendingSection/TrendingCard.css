@@ -1,0 +1,79 @@
+.trending-card {
+  flex: 0 0 auto;
+  width: 225px;
+  background: var(--dark-card);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.trending-card:hover {
+  transform: translateY(-5px);
+}
+
+.trending-poster-container {
+  position: relative;
+  width: 100%;
+  height: 320px;
+}
+
+.trending-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.trending-info {
+  padding: 12px;
+}
+
+.trending-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.trending-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--dark);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.trending-rating .star {
+  color: var(--accent);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

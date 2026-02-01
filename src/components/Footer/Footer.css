@@ -1,0 +1,12 @@
+.footer {
+  background: var(--dark-light);
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid var(--dark-card);
+}
+
+.footer p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin: 0;
+}
