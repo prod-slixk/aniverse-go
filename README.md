@@ -97,41 +97,7 @@ Vercel static hosting
 ESLint for code quality
 
 
-Project Structure
-aniverse-react/
-├── public/
-│   ├── assets/
-│   │   └── logo.png
-│   └── index.html
-├── src/
-│   ├── components/
-│   │   ├── ErrorBoundary/
-│   │   ├── FavoriteButton/
-│   │   ├── FavoritesPage/
-│   │   ├── FilterButtons/
-│   │   ├── Footer/
-│   │   ├── GenreFilter/
-│   │   ├── LoadMoreButton/
-│   │   ├── MovieCard/
-│   │   ├── MovieDetailModal/
-│   │   ├── MovieGrid/
-│   │   ├── Navbar/
-│   │   ├── SearchBar/
-│   │   └── TrendingSection/
-│   ├── hooks/
-│   │   ├── useFavorites.js
-│   │   ├── useGenreFilter.js
-│   │   ├── useMovies.js
-│   │   └── useTrending.js
-│   ├── services/
-│   │   └── api.js
-│   ├── utils/
-│   │   └── sanitize.js
-│   ├── App.jsx
-│   ├── App.css
-│   └── index.js
-├── package.json
-└── README.md
+
 
 Installation & Setup
 Prerequisites
